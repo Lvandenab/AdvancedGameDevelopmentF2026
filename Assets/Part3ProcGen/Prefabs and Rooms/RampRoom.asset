@@ -12,21 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8508d4e8bc8058045b0e406662e340df, type: 3}
   m_Name: RampRoom
   m_EditorClassIdentifier: Assembly-CSharp::DungeonRoomSO
-  prefab: {fileID: 3471135557816607621, guid: 669df5d603236a849ad4f21e1c9241fd, type: 3}
+  prefab: {fileID: 919164417429958794, guid: 2761bb4de6d57e54490c7c8f9046611e, type: 3}
   roomDoors:
   - doorKeyword: BLUE
-    canConnectToKeywords:
-    - BLUE
-    - GREEN
+    canConnectToKeywords: []
   - doorKeyword: GREEN
     canConnectToKeywords:
     - BLUE
     - GREEN
     - YELLOW
-  - doorKeyword: YELLOW
-    canConnectToKeywords:
-    - YELLOW
-    - GREEN
-  - doorKeyword: RED
-    canConnectToKeywords:
     - RED
+  - doorKeyword: YELLOW
+    canConnectToKeywords: []
+  - doorKeyword: RED
+    canConnectToKeywords: []

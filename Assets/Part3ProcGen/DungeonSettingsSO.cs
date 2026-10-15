@@ -8,6 +8,7 @@ public class DungeonSettingsSO : ScriptableObject
     {
         public DungeonRoomSO room;
         public int copies;
+        public bool isEndRoom;
     }
     //The name for this type of dungeon
     [SerializeField]
@@ -24,4 +25,12 @@ public class DungeonSettingsSO : ScriptableObject
     //A reference to the object used to close off open exits
     [SerializeField]
     public Transform cap;
+    [SerializeField]
+    public Transform BlueDoor;
+    [SerializeField]
+    public Transform BlueKey;
+    /*[SerializeField]
+    public Transform YellowDoor;
+    [SerializeField]
+    public Transform YellowKey;*/
 }

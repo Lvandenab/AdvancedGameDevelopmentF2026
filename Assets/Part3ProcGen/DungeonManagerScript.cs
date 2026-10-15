@@ -23,6 +23,7 @@ public class DungeonManagerScript : MonoBehaviour
 
     //The deck of rooms to spawn
     private List<DungeonRoomSO> deck = new();
+    private List<DungeonRoomSO> enddeck = new();
     //Rooms currently spawned
     private List<RoomScript> currentRooms = new();
     //This is a dynamic list to keep track of which exits are open in the dungeon
@@ -81,11 +82,27 @@ public class DungeonManagerScript : MonoBehaviour
             SpawnRoom(newRoom, ref currentRoom);
             //Debug.Log(currentRoom.GetEntityId());
         }
+        if (enddeck.Count>0)
+        {
+            int randIndex = Random.Range(0, enddeck.Count);
+            DungeonRoomSO endRoom = enddeck[randIndex];
+
+            RoomExits actualChosenExit = SpawnRoom(endRoom, ref currentRoom);
+            
+            if (currentRoom != null && actualChosenExit != null && settings.BlueDoor !=null)
+            {
+                Transform doorInstance = Instantiate(settings.BlueDoor);
+                doorInstance.position = actualChosenExit.edge.position;
+                doorInstance.forward = -actualChosenExit.edge.forward;
+
+                availableExits.Remove(actualChosenExit);
+            }
+        }
 
         //We close the exits with a cap
         CloseOffExits();
     }
-    void SpawnRoom(DungeonRoomSO newRoom, ref RoomScript currentRoom)
+    RoomExits SpawnRoom(DungeonRoomSO newRoom, ref RoomScript currentRoom)
     {
         RoomExits currentRoomExit;
 
@@ -167,7 +184,7 @@ public class DungeonManagerScript : MonoBehaviour
                 //Remove the exit we just connected to
                 availableExits.Remove(currentRoomExit);
 
-                return;
+                return currentRoomExit;
             }
             exitInd++;
         }
@@ -175,6 +192,7 @@ public class DungeonManagerScript : MonoBehaviour
         Debug.Log("Couldn't find an available exit for the spawned room.");
         //Destroy room created
         Destroy(currentRoom.gameObject);
+        return null;
     }
 
     //
@@ -198,15 +216,25 @@ public class DungeonManagerScript : MonoBehaviour
     {
         //Clear the deck
         deck.Clear();
+        enddeck.Clear();
 
         //For each item in the dungeon settings
         foreach (DungeonSettingsSO.RoomInventoryItem item
             in settings.possibleRooms)
         {
+
             //Add that many "cards" of that type to the deck
             for (int i = 0; i < item.copies; i++)
             {
-                deck.Add(item.room);
+                if (item.isEndRoom)
+                {
+                    enddeck.Add(item.room);
+                }
+                else
+                {
+                    deck.Add(item.room);
+                }
+                    
             }
         }
     }

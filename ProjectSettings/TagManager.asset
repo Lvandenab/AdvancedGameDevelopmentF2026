@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 3
-  tags: []
+  tags:
+  - Blue
+  - Yellow
+  - BlueDoor
+  - YellowDoor
   layers:
   - Default
   - TransparentFX
