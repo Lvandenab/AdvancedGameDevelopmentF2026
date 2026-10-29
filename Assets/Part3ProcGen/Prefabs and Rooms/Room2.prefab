@@ -648,19 +648,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::RoomScript
   doors:
-  - {fileID: 2763102400748139935}
   - {fileID: 9174500675401989753}
-  - {fileID: 6154910272828131306}
-  - {fileID: 2502917153023581129}
   colorKeywords:
-  - keyword: BLUE
-    color: {r: 0, g: 0, b: 1, a: 1}
-  - keyword: RED
-    color: {r: 1, g: 0, b: 0, a: 1}
-  - keyword: YELLOW
-    color: {r: 1, g: 1, b: 0, a: 1}
   - keyword: GREEN
     color: {r: 0.0191046, g: 1, b: 0, a: 1}
+  - keyword: BLUE
+    color: {r: 0, g: 0, b: 1, a: 1}
+  - keyword: YELLOW
+    color: {r: 1, g: 1, b: 0, a: 1}
+  - keyword: RED
+    color: {r: 1, g: 0, b: 0, a: 1}
   colliderCheck: {fileID: 5318648425854851959}
 --- !u!1 &2253007244132843168
 GameObject:

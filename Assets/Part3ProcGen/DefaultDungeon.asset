@@ -26,8 +26,8 @@ MonoBehaviour:
   - room: {fileID: 11400000, guid: 263a73728ecabdd4daa99eb416006b19, type: 2}
     copies: 0
     isEndRoom: 0
-  minRoomCount: 6
-  maxRoomCount: 10
+  minRoomCount: 3
+  maxRoomCount: 8
   cap: {fileID: 6211324965041785239, guid: 3c877729ac3b620478a2eea4fe13734c, type: 3}
   BlueDoor: {fileID: 6211324965041785239, guid: ba50a741c9a6c8a4286f93da33e5ede7, type: 3}
   BlueKey: {fileID: 8784938813135238271, guid: c01c6256697e11a45aabf959ed1c079f, type: 3}

@@ -14,14 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::DungeonRoomSO
   prefab: {fileID: 919164417429958794, guid: 2761bb4de6d57e54490c7c8f9046611e, type: 3}
   roomDoors:
-  - doorKeyword: BLUE
-    canConnectToKeywords: []
   - doorKeyword: GREEN
     canConnectToKeywords:
-    - BLUE
     - GREEN
-    - YELLOW
-    - RED
+  - doorKeyword: BLUE
+    canConnectToKeywords: []
   - doorKeyword: YELLOW
     canConnectToKeywords: []
   - doorKeyword: RED
